@@ -64,7 +64,7 @@ uis.directive('uiSelect',
         $select.ngModel = ngModel;
 
         $select.choiceGrouped = function(group){
-          return $select.isGrouped && group && group.name;
+          return $select.isGrouped && group && group.name && !group.name.startsWith('$');
         };
 
         if(attrs.tabindex){
@@ -361,7 +361,7 @@ uis.directive('uiSelect',
         };
 
         var opened = false;
-        
+
         scope.calculateDropdownPos = function() {
           if ($select.open) {
             dropdown = angular.element(element).querySelectorAll('.ui-select-dropdown');
