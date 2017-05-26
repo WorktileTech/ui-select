@@ -1,7 +1,7 @@
 /*!
  * ui-select
  * http://github.com/angular-ui/ui-select
- * Version: 0.19.9 - 2017-04-10T03:16:53.724Z
+ * Version: 0.19.7 - 2017-03-24T06:29:17.629Z
  * License: MIT
  */
 
@@ -217,7 +217,7 @@ uis.directive('uiSelectChoices',
       }
 
       choices.attr('ng-repeat', parserResult.repeatExpression(groupByExp))
-             .attr('ng-show', '$select.open'); //Prevent unnecessary watches when dropdown is closed
+             .attr('ng-if', '$select.open'); //Prevent unnecessary watches when dropdown is closed
     
 
       var rowsInner = tElement.querySelectorAll('.ui-select-choices-row-inner');
