@@ -38,7 +38,7 @@ uis.directive('uiSelectChoices',
       }
 
       choices.attr('ng-repeat', parserResult.repeatExpression(groupByExp))
-             .attr('ng-show', '$select.open'); //Prevent unnecessary watches when dropdown is closed
+             .attr('ng-if', '$select.open'); //Prevent unnecessary watches when dropdown is closed
     
 
       var rowsInner = tElement.querySelectorAll('.ui-select-choices-row-inner');
