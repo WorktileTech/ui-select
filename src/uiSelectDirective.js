@@ -64,6 +64,13 @@ uis.directive('uiSelect',
         $select.ngModel = ngModel;
 
         $select.choiceGrouped = function(group){
+            //String.prototype.startsWith为ES6特性，IE中不兼容
+            if (!String.prototype.startsWith) {
+                console.log('IE');
+                String.prototype.startsWith = function (searchString, position) {
+                    return this.substr(position || 0, searchString.length) === searchString;
+                };
+            }
           return $select.isGrouped && group && group.name && !group.name.startsWith('$');
         };
 
